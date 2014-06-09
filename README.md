@@ -17,6 +17,14 @@ Otherwise, quickstart:
 
 - modify assets in assets/ and check the changes in the browser
 
+- mimosa build
+
+- remove all the content from the gh-pages branch of lokku/jquery-nstslider
+
 - copy all the content of public/ into the gh-pages branch of lokku/jquery-nstslider
 
 - rename index.dev.html to index.html
+
+- edit index.html in the gh-pages and have all paths to be relative by removing the leading '/'.
+
+- remove socket.io and reload-client.js from index.html as they are not required
