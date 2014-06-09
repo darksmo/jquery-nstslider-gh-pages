@@ -1,0 +1,75 @@
+@color-darkblue: #113344;
+@color-blue: #5B83AD;
+@color-white: white;
+@color-black: black;
+@color-clearblue: #1886FF;
+@color-orange: #E87722;
+
+.has_border_radius (@amount) {
+    -webkit-border-radius: @amount;
+    border-radius: @amount;
+}
+
+.is_clickable {
+    cursor: hand;
+    cursor: pointer;
+}
+
+.css-gradient(@from: #20416A, @to: #3D69A5) {
+    background-color: @to;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@from),  to(@to));
+    background-image: -webkit-linear-gradient(top, @from, @to);
+    background-image: -moz-linear-gradient(top, @from, @to);
+    background-image: -o-linear-gradient(top, @from, @to);
+    background-image: -ms-linear-gradient(top, @from, @to);
+    background-image: linear-gradient(top, @from, @to);
+}
+.css-gradient(darken,@amount: 10%, @from: #20416A, @to: #3D69A5){
+    .css-gradient(darken(@from,@amount),darken(@to,@amount));
+}
+
+
+.has_transition(@property: all, @duration: 500ms) {
+    -webkit-transition: @property @duration ease-in-out;
+    -moz-transition: @property @duration ease-in-out;
+    -ms-transition: @property @duration ease-in-out;
+    -o-transition: @property @duration ease-in-out;
+    transition: @property @duration ease-in-out;
+}
+
+.disable-select {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.has_dropdown_shadow {
+    -webkit-box-shadow: 0 0 17px 0 rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 17px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 0 17px 0 rgba(0,0,0,0.3);
+    border: 0;
+}
+
+.is_button (@color-text, @color-background) {
+    .is_clickable;
+    color: @color-text;
+    display: block;
+    text-decoration: none;
+    width: 120px;
+    padding: 1em;
+    .has_border_radius(3px);
+    margin: 15px auto;
+    text-align: center;
+    background: @color-background;
+}
+.is_button_transition (@color) {
+    .has_transition(background-color, 150ms);
+    background-color: @color;
+}
+
+.has_rotation(@deg) {
+    transform:rotate(@deg);
+    -ms-transform:rotate(@deg); /* IE 9 */
+    -webkit-transform:rotate(@deg); /* Opera, Chrome, and Safari */
+}

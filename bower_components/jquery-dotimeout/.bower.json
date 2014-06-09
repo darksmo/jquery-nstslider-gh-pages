@@ -1,0 +1,13 @@
+{
+  "name": "jquery-dotimeout",
+  "_cacheHeaders": {
+    "ETag": "\"0a93d57d7192e2e9a38c194468936ebc\"",
+    "Content-Length": "42775",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "_release": "e-tag:0a93d57d7",
+  "main": "index",
+  "_source": "https://github.com/cowboy/jquery-dotimeout",
+  "_target": "*",
+  "_originalSource": "https://github.com/cowboy/jquery-dotimeout"
+}

@@ -1,0 +1,13 @@
+[
+  "assets/javascripts/vendor/ba-dotimeout/jquery.ba-dotimeout.min.js",
+  "assets/javascripts/vendor/google-code-prettify/prettify.js",
+  "assets/javascripts/vendor/jquery-nstSlider/jquery.nstSlider.js",
+  "assets/javascripts/vendor/jquery.scrollTo/jquery.scrollTo.js",
+  "assets/javascripts/vendor/jquery.scrollTo/jquery.scrollTo.min.js",
+  "assets/javascripts/vendor/jquery/jquery.js",
+  "assets/javascripts/vendor/js-beautify/beautify-css.js",
+  "assets/javascripts/vendor/js-beautify/beautify-html.js",
+  "assets/javascripts/vendor/js-beautify/beautify.js",
+  "assets/javascripts/vendor/requirejs/require.js",
+  "assets/stylesheets/vendor/jquery-dotimeout/index"
+]

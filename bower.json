@@ -1,0 +1,14 @@
+{
+  "name": "nstSlider",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "requirejs": "2.1.11",
+    "google-code-prettify": "~1.0.1",
+    "js-beautify": "~1.5.1",
+    "jquery.scrollTo": "~1.4.11",
+    "jquery-dotimeout": "https://github.com/cowboy/jquery-dotimeout",
+    "ba-dotimeout": "*",
+    "jquery-nstSlider": "~1.0.3"
+  }
+}

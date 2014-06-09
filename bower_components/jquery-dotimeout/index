@@ -1,0 +1,785 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html class="   ">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <title>cowboy/jquery-dotimeout · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" />
+    <meta property="fb:app_id" content="1401488693436528"/>
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="cowboy/jquery-dotimeout" name="twitter:title" /><meta content="jquery-dotimeout - jQuery doTimeout: Like setTimeout, but better!" name="twitter:description" /><meta content="https://avatars2.githubusercontent.com/u/54051?s=400" name="twitter:image:src" />
+<meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars2.githubusercontent.com/u/54051?s=400" property="og:image" /><meta content="cowboy/jquery-dotimeout" property="og:title" /><meta content="https://github.com/cowboy/jquery-dotimeout" property="og:url" /><meta content="jquery-dotimeout - jQuery doTimeout: Like setTimeout, but better!" property="og:description" />
+
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035/">
+    <link rel="xhr-socket" href="/_sockets" />
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="selected-link" value="repo_source" data-pjax-transient />
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="6DE7C3C8:44A7:1079B17:535FF074" name="octolytics-dimension-request_id" />
+    
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.global.ssl.fastly.net/favicon.ico" />
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="SFC3ddPHbDWodj/EshSQLfcJsm3kJlcCaps/0T5ZCDqfmGgMhYm4jx2Y8B4iBIdQ5Szb2yxDYdrLgEwKeQlUUA==" name="csrf-token" />
+
+    <link href="https://github.global.ssl.fastly.net/assets/github-fd636fc0fc23c06849cc029659840d67838291b9.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://github.global.ssl.fastly.net/assets/github2-1f4fdbc73427865341fbcc6fbe17fe321c7c9817.css" media="all" rel="stylesheet" type="text/css" />
+    
+
+
+        <script crossorigin="anonymous" src="https://github.global.ssl.fastly.net/assets/frameworks-83bb02a73dd69926304fd1a101dbd75aa669e8dd.js" type="text/javascript"></script>
+        <script async="async" crossorigin="anonymous" src="https://github.global.ssl.fastly.net/assets/github-1d047edcc09cf920d198765a63e62ffd3432c6f7.js" type="text/javascript"></script>
+        
+        
+      <meta http-equiv="x-pjax-version" content="134013d2d6246e3fcef22ba957b35780">
+
+      
+  <meta name="description" content="jquery-dotimeout - jQuery doTimeout: Like setTimeout, but better!" />
+
+  <meta content="54051" name="octolytics-dimension-user_id" /><meta content="cowboy" name="octolytics-dimension-user_login" /><meta content="346738" name="octolytics-dimension-repository_id" /><meta content="cowboy/jquery-dotimeout" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="346738" name="octolytics-dimension-repository_network_root_id" /><meta content="cowboy/jquery-dotimeout" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/cowboy/jquery-dotimeout/commits/master.atom" rel="alternate" title="Recent Commits to jquery-dotimeout:master" type="application/atom+xml" />
+
+  </head>
+
+
+  <body class="logged_out  env-production  vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      
+      <div class="header header-logged-out">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions">
+        <a class="button primary" href="/join">Sign up</a>
+      <a class="button signin" href="/login?return_to=%2Fcowboy%2Fjquery-dotimeout">Sign in</a>
+    </div>
+
+    <div class="command-bar js-command-bar  in-repository">
+
+      <ul class="top-nav">
+          <li class="explore"><a href="/explore">Explore</a></li>
+        <li class="features"><a href="/features">Features</a></li>
+          <li class="enterprise"><a href="https://enterprise.github.com/">Enterprise</a></li>
+          <li class="blog"><a href="/blog">Blog</a></li>
+      </ul>
+        <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<div class="commandbar">
+  <span class="message"></span>
+  <input type="text" data-hotkey="s, /" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off"
+    
+    
+      data-repo="cowboy/jquery-dotimeout"
+      data-branch="master"
+      data-sha="112db110e6c6e33a6f2325a276bb8321f6f67ffc"
+  >
+  <div class="display hidden"></div>
+</div>
+
+    <input type="hidden" name="nwo" value="cowboy/jquery-dotimeout" />
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target" role="button" aria-haspopup="true">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container" aria-hidden="true">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked" />
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global" />
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="help tooltipped tooltipped-s" aria-label="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+    </div>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+
+  <li>
+    <a href="/login?return_to=%2Fcowboy%2Fjquery-dotimeout"
+    class="minibutton with-count js-toggler-target star-button tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>Star
+  </a>
+
+    <a class="social-count js-social-count" href="/cowboy/jquery-dotimeout/stargazers">
+      246
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Fcowboy%2Fjquery-dotimeout"
+        class="minibutton with-count js-toggler-target fork-button tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-git-branch"></span>Fork
+      </a>
+      <a href="/cowboy/jquery-dotimeout/network" class="social-count">
+        29
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="/cowboy" class="url fn" itemprop="url" rel="author"><span itemprop="title">cowboy</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="/cowboy/jquery-dotimeout" class="js-current-repository js-repo-home-link">jquery-dotimeout</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline js-new-discussion-timeline with-full-navigation ">
+        <div class="repository-sidebar clearfix">
+            
+
+<div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders">
+  <div class="sunken-menu-contents">
+    <ul class="sunken-menu-group">
+      <li class="tooltipped tooltipped-w" aria-label="Code">
+        <a href="/cowboy/jquery-dotimeout" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /cowboy/jquery-dotimeout">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+        <li class="tooltipped tooltipped-w" aria-label="Issues">
+          <a href="/cowboy/jquery-dotimeout/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g i" data-selected-links="repo_issues /cowboy/jquery-dotimeout/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class='counter'>5</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>        </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Pull Requests">
+        <a href="/cowboy/jquery-dotimeout/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g p" data-selected-links="repo_pulls /cowboy/jquery-dotimeout/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class='counter'>1</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+
+    </ul>
+    <div class="sunken-menu-separator"></div>
+    <ul class="sunken-menu-group">
+
+      <li class="tooltipped tooltipped-w" aria-label="Pulse">
+        <a href="/cowboy/jquery-dotimeout/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="pulse /cowboy/jquery-dotimeout/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Graphs">
+        <a href="/cowboy/jquery-dotimeout/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /cowboy/jquery-dotimeout/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Network">
+        <a href="/cowboy/jquery-dotimeout/network" aria-label="Network" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-selected-links="repo_network /cowboy/jquery-dotimeout/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+    </ul>
+
+
+  </div>
+</div>
+
+              <div class="only-with-full-nav">
+                
+
+  
+
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field"
+           value="https://github.com/cowboy/jquery-dotimeout.git" readonly="readonly">
+
+    <span aria-label="copy to clipboard" class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/cowboy/jquery-dotimeout.git" data-copied-hint="copied!"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field"
+           value="https://github.com/cowboy/jquery-dotimeout" readonly="readonly">
+
+    <span aria-label="copy to clipboard" class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/cowboy/jquery-dotimeout" data-copied-hint="copied!"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>
+      or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <span class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <a href="https://help.github.com/articles/which-remote-url-should-i-use">
+    <span class="octicon octicon-question"></span>
+    </a>
+  </span>
+</p>
+
+
+
+                <a href="/cowboy/jquery-dotimeout/archive/master.zip"
+                   class="minibutton sidebar-button"
+                   aria-label="Download cowboy/jquery-dotimeout as a zip file"
+                   title="Download cowboy/jquery-dotimeout as a zip file"
+                   rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+          
+
+<span id="js-show-full-navigation"></span>
+
+<div class="repository-meta js-details-container ">
+    <div class="repository-description js-details-show">
+      <p>jQuery doTimeout: Like setTimeout, but better!</p>
+    </div>
+
+    <div class="repository-website js-details-show">
+      <p><a href="http://benalman.com/projects/jquery-dotimeout-plugin/" rel="nofollow">http://benalman.com/projects/jquery-dotimeout-plugin/</a></p>
+    </div>
+
+
+</div>
+
+<div class="capped-box overall-summary ">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="/cowboy/jquery-dotimeout/commits/master">
+            <span class="num">
+              <span class="octicon octicon-history"></span>
+              8
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="/cowboy/jquery-dotimeout/branches">
+          <span class="num">
+            <span class="octicon octicon-git-branch"></span>
+            1
+          </span>
+          branch
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax href="/cowboy/jquery-dotimeout/releases">
+          <span class="num">
+            <span class="octicon octicon-tag"></span>
+            2
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+          <a href="/cowboy/jquery-dotimeout/graphs/contributors" class="js-deferred-content" data-url="/cowboy/jquery-dotimeout/contributors_size">
+            <span class="num">
+              <span class="octicon octicon-organization"></span>
+            </span>
+            Fetching contributors
+          </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="/cowboy/jquery-dotimeout/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f7df1e;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">94.6%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/cowboy/jquery-dotimeout/search?l=php">
+                <span class="color-block language-color" style="background-color:#6e03c1;"></span>
+                <span class="lang">PHP</span>
+                <span class="percent">5.4%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="tooltipped tooltipped-s" aria-label="Show language statistics">
+    <a href="#"
+     class="repository-lang-stats-graph js-toggle-lang-stats"
+     style="background-color:#6e03c1">
+  <span class="language-color" style="width:94.6%; background-color:#f7df1e;" itemprop="keywords">JavaScript</span><span class="language-color" style="width:5.4%; background-color:#6e03c1;" itemprop="keywords">PHP</span>
+    </a>
+  </div>
+
+
+
+<div class="file-navigation in-mid-page">
+    <a href="/cowboy/jquery-dotimeout/compare" aria-label="Compare, review, create a pull request" class="minibutton compact primary tooltipped tooltipped-s" aria-label="Compare &amp; review" data-pjax>
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+
+<div class="select-menu js-menu-container js-select-menu" >
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="master"
+    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/cowboy/jquery-dotimeout/tree/master"
+                 data-name="master"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/cowboy/jquery-dotimeout/tree/v1.0"
+                 data-name="v1.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="v1.0">v1.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/cowboy/jquery-dotimeout/tree/v0.4"
+                 data-name="v0.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="v0.4">v0.4</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+
+  <div class="breadcrumb"><span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/cowboy/jquery-dotimeout" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">jquery-dotimeout</span></a></span></span><span class="separator"> / </span><form action="/login?return_to=%2Fcowboy%2Fjquery-dotimeout" aria-label="Sign in to make or propose changes" class="js-new-blob-form tooltipped tooltipped-e new-file-link" method="post"><span aria-label="Sign in to make or propose changes" class="js-new-blob-submit octicon octicon-file-add" data-test-id="create-new-git-file" role="button"></span></form></div>
+</div>
+
+
+
+<a href="/cowboy/jquery-dotimeout/find/master"
+  data-hotkey="t" class="js-show-file-finder" style="display:none" data-pjax>Show File Finder</a>
+
+
+  
+  <div class="commit commit-tease js-details-container" >
+    <p class="commit-title ">
+        <a href="/cowboy/jquery-dotimeout/commit/1849a50d3defe2205ea98d9363421805bc265149" class="message" data-pjax="true" title="Updated file size from 0.9k to 1.0k">Updated file size from 0.9k to 1.0k</a>
+        
+    </p>
+    <div class="commit-meta">
+      <span aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="1849a50d3defe2205ea98d9363421805bc265149" data-copied-hint="copied!"><span class="octicon octicon-clippy"></span></span>
+      <a href="/cowboy/jquery-dotimeout/commit/1849a50d3defe2205ea98d9363421805bc265149" class="sha-block" data-pjax>latest commit <span class="sha">1849a50d3d</span></a>
+
+      <div class="authorship">
+        <img alt="Ben Alman" class="gravatar js-avatar" data-user="54051" height="20" src="https://avatars1.githubusercontent.com/u/54051?s=140" width="20" />
+        <span class="author-name"><a href="/cowboy" data-skip-pjax="true" rel="author">cowboy</a></span>
+        authored <local-time class="updated" datetime="2010-03-03T13:05:01Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 13:05:01 +0000">March 03, 2010</local-time>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="file-wrap">
+    <table class="files" data-pjax>
+
+      
+<tbody class=""
+  data-url="/cowboy/jquery-dotimeout/file-list/master">
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/tree/master/docs" class="js-directory-link" id="e3e2a9bfd88566b05001b02a3f51d286-00f8488b275beb35be6c3c709e95c16e98c43d31" title="docs">docs</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/1849a50d3defe2205ea98d9363421805bc265149" class="message" data-pjax="true" title="Updated file size from 0.9k to 1.0k">Updated file size from 0.9k to 1.0k</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T13:05:01Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 13:05:01 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/tree/master/examples" class="js-directory-link" id="bfebe34154a0dfd9fc7b447fc9ed74e9-f8093c107025417ec8a6d71193e15662a8aef2c8" title="examples">examples</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/c6d9eb93a9e90bc221ba2c09d7594bb28dc07705" class="message" data-pjax="true" title="Added callback-as-string signature, where callback can be a string method name of $ or $.fn (contextually) per issue #1. Also callback now requires true, not &quot;truthy&quot; value to start polling.">Added callback-as-string signature, where callback can be a string me…</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T12:57:36Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 12:57:36 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/tree/master/shared" class="js-directory-link" id="9e81e7b963c71363e2fb3eefcfecfc0e-f15cf2e8c4c99805c0533f24e166358938791561" title="shared">shared</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/c6d9eb93a9e90bc221ba2c09d7594bb28dc07705" class="message" data-pjax="true" title="Added callback-as-string signature, where callback can be a string method name of $ or $.fn (contextually) per issue #1. Also callback now requires true, not &quot;truthy&quot; value to start polling.">Added callback-as-string signature, where callback can be a string me…</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T12:57:36Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 12:57:36 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/tree/master/unit" class="js-directory-link" id="3e34bdebd9bd5edda27e8728904a2552-a002df02892a34c279faa97dbe7d7f075031bc26" title="unit">unit</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/c6d9eb93a9e90bc221ba2c09d7594bb28dc07705" class="message" data-pjax="true" title="Added callback-as-string signature, where callback can be a string method name of $ or $.fn (contextually) per issue #1. Also callback now requires true, not &quot;truthy&quot; value to start polling.">Added callback-as-string signature, where callback can be a string me…</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T12:57:36Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 12:57:36 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/blob/master/LICENSE-GPL" class="js-directory-link" id="d44916b7504278aac44a4a19d7d7dc4b-76927f581c57a3929d8679247ad0906494e7d8fd" title="LICENSE-GPL">LICENSE-GPL</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/cf12252dfea56c8fc7595690385f569e33aebec8" class="message" data-pjax="true" title="changed license to dual mit / gpl, tweaked example">changed license to dual mit / gpl, tweaked example</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2009-11-21T17:46:01Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2009-11-21 17:46:01 +0000">November 21, 2009</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/blob/master/LICENSE-MIT" class="js-directory-link" id="7f0bdbc0a0545831259b66259ac6b604-874d24697174183d734f3dc6de332d2d2bea01d5" title="LICENSE-MIT">LICENSE-MIT</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/6fdbd474618ce32d0977dd70d14b5139aac79b37" class="message" data-pjax="true" title="Updated unit tests, added and tested jQuery 1.4.1, all systems go!">Updated unit tests, added and tested jQuery 1.4.1, all systems go!</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-01-27T01:57:41Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-01-27 01:57:41 +0000">January 27, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/blob/master/README.markdown" class="js-directory-link" id="0a369498a5a8db3ac8fa606b544c9810-d5a499d24e677278d27835683f33437c6d632e7f" title="README.markdown">README.markdown</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/c6d9eb93a9e90bc221ba2c09d7594bb28dc07705" class="message" data-pjax="true" title="Added callback-as-string signature, where callback can be a string method name of $ or $.fn (contextually) per issue #1. Also callback now requires true, not &quot;truthy&quot; value to start polling.">Added callback-as-string signature, where callback can be a string me…</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T12:57:36Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 12:57:36 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/blob/master/jquery.ba-dotimeout.js" class="js-directory-link" id="246d7d094625841d78a8638dcd25c206-4bc7aeac8acf28ef805aabd30a5c7a52d316a754" title="jquery.ba-dotimeout.js">jquery.ba-dotimeout.js</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/1849a50d3defe2205ea98d9363421805bc265149" class="message" data-pjax="true" title="Updated file size from 0.9k to 1.0k">Updated file size from 0.9k to 1.0k</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T13:05:01Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 13:05:01 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+    <tr>
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/blob/master/jquery.ba-dotimeout.min.js" class="js-directory-link" id="c134894d8b654533d691fa015e8d59f9-02d9349c2c6dcde193788a41a24bad5766e08abb" title="jquery.ba-dotimeout.min.js">jquery.ba-dotimeout.min.js</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="/cowboy/jquery-dotimeout/commit/c6d9eb93a9e90bc221ba2c09d7594bb28dc07705" class="message" data-pjax="true" title="Added callback-as-string signature, where callback can be a string method name of $ or $.fn (contextually) per issue #1. Also callback now requires true, not &quot;truthy&quot; value to start polling.">Added callback-as-string signature, where callback can be a string me…</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><local-time datetime="2010-03-03T12:57:36Z" from="now" title-format="%Y-%m-%d %H:%M:%S %z" title="2010-03-03 12:57:36 +0000">March 03, 2010</local-time></span></td>
+    </tr>
+</tbody>
+
+    </table>
+  </div>
+
+
+  <div id="readme" class="clearfix announce instapaper_body markdown">
+    <span class="name">
+      <span class="octicon octicon-book"></span>
+      README.markdown
+    </span>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="user-content-jquery-dotimeout-like-settimeout-but-better" class="anchor" href="#jquery-dotimeout-like-settimeout-but-better"><span class="octicon octicon-link"></span></a>jQuery doTimeout: Like setTimeout, but better!</h1>
+
+<p><a href="http://benalman.com/projects/jquery-dotimeout-plugin/">http://benalman.com/projects/jquery-dotimeout-plugin/</a></p>
+
+<p>Version: 1.0, Last updated: 3/3/2010</p>
+
+<p>jQuery doTimeout takes the work out of delayed code execution, including interval and timeout management, polling loops and debouncing. In addition, it's fully jQuery chainable, with a very simple, yet powerful API.</p>
+
+<p>Visit the <a href="http://benalman.com/projects/jquery-dotimeout-plugin/">project page</a> for more information and usage examples!</p>
+
+<h2>
+<a name="user-content-documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p><a href="http://benalman.com/code/projects/jquery-dotimeout/docs/">http://benalman.com/code/projects/jquery-dotimeout/docs/</a></p>
+
+<h2>
+<a name="user-content-examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>These working examples, complete with fully commented code, illustrate a few
+ways in which this plugin can be used.</p>
+
+<p><a href="http://benalman.com/code/projects/jquery-dotimeout/examples/debouncing/">http://benalman.com/code/projects/jquery-dotimeout/examples/debouncing/</a><br><a href="http://benalman.com/code/projects/jquery-dotimeout/examples/delay-poll/">http://benalman.com/code/projects/jquery-dotimeout/examples/delay-poll/</a><br><a href="http://benalman.com/code/projects/jquery-dotimeout/examples/hoverintent/">http://benalman.com/code/projects/jquery-dotimeout/examples/hoverintent/</a></p>
+
+<h2>
+<a name="user-content-support-and-testing" class="anchor" href="#support-and-testing"><span class="octicon octicon-link"></span></a>Support and Testing</h2>
+
+<p>Information about what version or versions of jQuery this plugin has been
+tested with, what browsers it has been tested in, and where the unit tests
+reside (so you can test it yourself).</p>
+
+<h3>
+<a name="user-content-jquery-versions" class="anchor" href="#jquery-versions"><span class="octicon octicon-link"></span></a>jQuery Versions</h3>
+
+<p>1.3.2, 1.4.2</p>
+
+<h3>
+<a name="user-content-browsers-tested" class="anchor" href="#browsers-tested"><span class="octicon octicon-link"></span></a>Browsers Tested</h3>
+
+<p>Internet Explorer 6-8, Firefox 2-3.6, Safari 3-4, Chrome 4-5, Opera 9.6-10.1.</p>
+
+<h3>
+<a name="user-content-unit-tests" class="anchor" href="#unit-tests"><span class="octicon octicon-link"></span></a>Unit Tests</h3>
+
+<p><a href="http://benalman.com/code/projects/jquery-dotimeout/unit/">http://benalman.com/code/projects/jquery-dotimeout/unit/</a></p>
+
+<h2>
+<a name="user-content-release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+
+<p>1.0 - (3/3/2010) Callback can now be a string, in which case it will call the appropriate <code>$.method</code> or <code>$.fn.method</code>, depending on where <code>.doTimeout</code> was called. Callback must now return <code>true</code> (not just a truthy value) to poll.<br>
+0.4 - (7/15/2009) Made the "id" argument optional, some other minor tweaks<br>
+0.3 - (6/25/2009) Initial release</p>
+
+<h2>
+<a name="user-content-license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2010 "Cowboy" Ben Alman<br>
+Dual licensed under the MIT and GPL licenses.<br><a href="http://benalman.com/about/license/">http://benalman.com/about/license/</a></p></article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com">API</a></li>
+      <li><a href="http://training.github.com">Training</a></li>
+      <li><a href="http://shop.github.com">Shop</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+
+    </ul>
+
+    <a href="/">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>&copy; 2014 <span title="0.03437s from github-fe134-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="/site/terms">Terms</a></li>
+        <li><a href="/site/privacy">Privacy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-remove-close close js-ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+  </body>
+</html>
+

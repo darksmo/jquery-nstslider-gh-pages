@@ -1,0 +1,324 @@
+@import 'prettify';
+@import 'scrollspy';
+
+@import 'settings';
+
+table pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+body {
+  padding: 182px 0;
+  margin: 0;
+  font-family: "RaleWay", Helvetica, Arial, sans-serif;
+  background: @color-white;
+}
+
+a {
+    color: @color-orange;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-top: 0;
+}
+
+#disqus {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#features {
+    text-align: center;
+    color: @color-darkblue;
+    padding-bottom: 60px;
+    margin-top: 98px;
+
+    ul {
+        width: 500px;
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        font-size: 21px;
+
+        li {
+            margin: 1em 0;
+            display: inline;
+            color: @color-black;
+
+            span {
+                white-space: nowrap;
+            }
+        }
+        li:first-child:before {
+            content : '';
+        }
+        li:before {
+            content: ' • ';
+        }
+    }
+}
+
+.as_used {
+    z-index: 1;
+    .has_border_radius(4px);
+    .has_rotation(7deg);
+    width: 120px;
+    background: @color-blue;
+    text-align: center;
+    padding: 4px;
+    font-size: 14px;
+    color: @color-white;
+    margin: -160px 48px 0 auto;
+    position: relative;
+    
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+#header {
+    .has_dropdown_shadow;
+    z-index: 1;
+    text-align: center;
+    background-color: @color-darkblue;
+    padding: 12px;
+    color: @color-white;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    h1 {
+        font-size: 48px;
+        color: @color-white;
+    }
+
+}
+
+
+section {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#get_it {
+    color: @color-blue;
+    margin: 0;
+    padding: 75px 0;
+
+    .buttons {
+        .has_border_radius(10px);
+        border: 4px dashed @color-blue;
+        margin: 15px auto;
+        padding: 1em;
+        width: 300px;
+    }
+
+    a {
+        .is_button(@color-white, @color-blue);
+    }
+
+    a:hover {
+        .is_button_transition(@color-darkblue);
+    }
+}
+
+#demo {
+    background: @color-blue;
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.demo {
+    color: @color-white;
+    margin-bottom: 100px;
+
+    h2 {
+        text-align: center;
+    }
+
+    .description {
+        .has_border_radius(4px);
+        color: @color-darkblue;
+        background: @color-white;
+        padding: 1em;
+        margin: 2em 1em;
+    }
+
+    .widget {
+        @slider-height: 21px;
+        @slider-width: 500px;
+
+        .disable-select;
+
+        width: @slider-width + 10px;
+        margin: 0 auto;
+        position: relative;
+
+        .ariaAttributesAsText {
+            text-align: center;
+            padding: 1em;
+        }
+
+        #highlightRangeButton {
+            .is_button(@color-white, @color-darkblue);
+            width: 200px;
+        }
+        #highlightRangeButton:hover {
+            .is_button_transition(@color-orange);
+        }
+
+        #changeStepIncrement {
+            .is_button(@color-white, @color-darkblue);
+            width: 300px;
+        }
+        #changeStepIncrement:hover {
+            .is_button_transition(@color-orange);
+        }
+
+        .nstSlider {
+            .is_clickable;
+            .has_border_radius(10px);
+            position: relative;
+            width: @slider-width;
+            height: @slider-height;
+            background: @color-darkblue;
+
+            .leftGrip.gripHighlighted {
+                background: @color-darkblue;
+            }
+            .rightGrip.gripHighlighted {
+                background: @color-darkblue;
+            }
+
+            .rightGrip,
+            .leftGrip {
+                .has_border_radius(10px);
+                width: @slider-height;
+                height: @slider-height;
+                background: @color-white;
+                position: absolute;
+
+            }
+
+            .bar {
+                .has_border_radius(10px);
+                position: absolute;
+                background: @color-white;
+                height: @slider-height - 12;
+                top: 6px;
+            }
+        }
+
+        .leftLabel  { 
+            position: absolute; 
+            left: -35px;
+            top: 0;
+        }
+        .rightLabel { 
+            position: absolute; 
+            right: -30px;
+            top: 0;
+        }
+        .highlightPanel {
+            .has_transition;
+            .has_border_radius(10px);
+            position: absolute;
+            background: @color-orange;
+            height: 21px;
+            top: 0;
+        }
+    }
+
+    .prettyprint {
+        background: @color-darkblue;
+    }
+
+}
+
+#methods {
+    background: @color-blue;
+    color: @color-white;
+    padding: 30px 0 50px 0;
+
+    table {
+        width: 50%;
+        margin: 20px auto;
+        color: @color-white;
+        background: @color-white;
+        .has_border_radius(4px);
+
+        th {
+            background: @color-darkblue;
+            color: @color-white;
+            text-align: left;
+            padding: 13px;
+        }
+
+        tr {
+            background: @color-blue;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        ol {
+            margin: 0;
+            padding: 12px;
+        }
+    }
+}
+
+
+#settings {
+    color: @color-blue;
+    margin: 0;
+    padding: 30px 0 50px 0;
+    background: @color-white;
+
+    table {
+        width: 50%;
+        margin: 20px auto;
+        color: @color-black;
+        background: @color-blue;
+        .has_border_radius(4px);
+
+        th {
+            background: @color-blue;
+            color: @color-white;
+            text-align: left;
+            padding: 13px;
+        }
+
+        tr {
+            background: white;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        ol {
+            margin: 0;
+            padding: 12px;
+        }
+    }
+}

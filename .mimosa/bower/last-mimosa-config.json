@@ -1,0 +1,30 @@
+{
+  "watch": true,
+  "bowerDir": {
+    "path": ".mimosa/bower/bower_components",
+    "clean": true,
+    "pathFull": ""
+  },
+  "copy": {
+    "enabled": true,
+    "trackChanges": true,
+    "outRoot": "",
+    "defaultStrategy": "packageRoot",
+    "strategy": {},
+    "forceLatest": true,
+    "exclude": [],
+    "unknownMainFullCopy": false,
+    "overridesArrays": {
+      "prettyprint.js": [
+        "prettyprint.js"
+      ]
+    },
+    "overridesObjects": {},
+    "mainOverrides": {
+      "prettyprint.js": [
+        "prettyprint.js"
+      ]
+    },
+    "pathMod": null
+  }
+}

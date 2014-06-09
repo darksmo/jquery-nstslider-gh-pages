@@ -1,0 +1,44 @@
+@import 'settings';
+
+.scrollspy {
+    color: @color-white; 
+
+    ul {
+        .has_border_radius(4px);
+        .is_clickable;
+
+        list-style: none;
+        padding: 5px 0;
+        margin: 0;
+
+        li {
+            background: @color-darkblue;
+            display: block;
+            padding: 5px;
+            opacity: 0.5;
+            display: inline;
+        }
+
+        li:hover {
+            color: @color-orange;
+        }
+
+        li.selected_prev {
+            color: @color-orange;
+            opacity: 0.5;
+        }
+
+        li.selected {
+            color: @color-orange;
+            opacity: 1;
+        }
+
+        .subitem {
+            padding-left: 0.5em;
+            font-size: 10px;
+            text-transform: uppercase;
+            border-bottom: none;
+            font-family: 'Ubuntu Condensed';
+        }
+    }
+}
