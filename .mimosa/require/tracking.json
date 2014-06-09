@@ -33,7 +33,8 @@
     ],
     "/javascripts/templates.js": [
       "vendor/underscore"
-    ]
+    ],
+    "/javascripts/vendor/underscore.js": []
   },
   "aliases": {
     "/javascripts/main.js": {
