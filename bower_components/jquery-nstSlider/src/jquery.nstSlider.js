@@ -1,7 +1,5 @@
 /*
- * jQuery Nestoria Slider 1.0.1
- *
- * Slide between a maximum and a minimum value.
+ * jQuery Nestoria Slider
  *
  * Copyright 2014, Lokku Ltd.
  * Free to use and abuse under the MIT license.
@@ -638,6 +636,8 @@
             _methods.refresh_grips_style.call($this);
 
             _methods.notify_changed_implicit.call($this, 'drag_start', prev_min, prev_max);
+
+            e.preventDefault();
         },
         'drag_move_func_touch' : function (e) {
             if (_is_mousedown === true) {
@@ -774,6 +774,8 @@
  
                 // prepare for next movement
                 _original_mousex = absoluteMousePosition;
+
+                e.preventDefault();
             }
         },
         'drag_end_func_touch' : function (e) {
@@ -1666,8 +1668,7 @@
             // cdf and the inverted cdf.
             //
             var pixel_to_value_mapping = function (pixel) {
-
-                return pixel_to_value_lookup[pixel];
+                return pixel_to_value_lookup[parseInt(pixel, 10)];
             };
 
             var value_to_pixel_mapping = function (value) {
