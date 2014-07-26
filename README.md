@@ -23,8 +23,11 @@ Otherwise, quickstart:
 
 - copy all the content of public/ into the gh-pages branch of lokku/jquery-nstslider
 
-- rename index.dev.html to index.html
 
-- edit index.html in the gh-pages and have all paths to be relative by removing the leading '/'.
+**NOTE** If you modify public/index.dev.html you need to re-create/modify index.html. The safest way to do this is:
 
-- remove socket.io and reload-client.js from index.html as they are not required
+- copy index.dev.html to index.html
+
+- remove socket.io and reload-client.js from the &lt;head&gt; of index.html
+
+- have all paths in the &lt;head&gt; of index.html to be relative by removing the leading '/'.
