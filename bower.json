@@ -9,6 +9,6 @@
     "jquery.scrollTo": "~1.4.11",
     "jquery-dotimeout": "https://github.com/cowboy/jquery-dotimeout",
     "ba-dotimeout": "*",
-    "jquery-nstSlider": "*"
+    "jquery-nstSlider": "1.0.9"
   }
 }
