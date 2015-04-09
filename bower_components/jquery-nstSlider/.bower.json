@@ -1,6 +1,6 @@
 {
   "name": "nstSlider",
-  "version": "1.0.7",
+  "version": "1.0.11",
   "main": [
     "./dist/jquery.nstSlider.js"
   ],
@@ -33,13 +33,13 @@
     "widget"
   ],
   "license": "MIT",
-  "_release": "1.0.7",
+  "_release": "1.0.11",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.7",
-    "commit": "b49d350a7aa32bff0f46ce056bd57703a34f6669"
+    "tag": "v1.0.11",
+    "commit": "1be8c7e5beb7b3be7c2fb22622c0e54a2329d293"
   },
   "_source": "git://github.com/lokku/jquery-nstslider.git",
-  "_target": "*",
+  "_target": "1.0.11",
   "_originalSource": "jquery-nstSlider"
 }

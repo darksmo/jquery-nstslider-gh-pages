@@ -1,6 +1,6 @@
-/*! Nestoria Slider - v1.0.7 - 2014-07-26
+/*! Nestoria Slider - v1.0.10 - 2015-04-09
 * http://lokku.github.io/jquery-nstslider/
-* Copyright (c) 2014 Lokku Ltd.; Licensed MIT */
+* Copyright (c) 2015 Lokku Ltd.; Licensed MIT */
 (function($) {
     /* 
      * These are used for user interaction. This plugin assumes the user can
@@ -50,6 +50,7 @@
           */
          'validateAndMoveGripsToPx' : function (nextLeftGripPositionPx, nextRightGripPositionPx) {
              var $this = this;
+
              var draggableAreaLengthPx = _methods.getSliderWidthPx.call($this) - $this.data('left_grip_width');
 
              //
@@ -188,7 +189,7 @@
                 settings = $this.data('settings'),
                 $leftGrip = $this.find(settings.left_grip_selector);
 
-            return Math.round($leftGrip.width());
+            return Math.round($leftGrip.outerWidth());
          },
          /*
           * Return the width of the right grip. The calling method should
@@ -200,7 +201,24 @@
                 settings = $this.data('settings'),
                 $rightGrip = $this.find(settings.right_grip_selector);
 
-            return Math.round($rightGrip.width());
+            return Math.round($rightGrip.outerWidth());
+         },
+         'binarySearchValueToPxCompareFunc' : function (s, a, i) {
+            // Must return:
+            //
+            // s: element to search for
+            // a: array we are looking in 
+            // i: position of the element we are looking for
+            //
+            // -1 (s < a[i])
+            // 0  found (= a[i])
+            // 1  (s > a[i])
+            if (s === a[i])          { return 0; }  // element found exactly
+            if (s < a[i] && i === 0) { return 0; }  // left extreme case e.g., a = [ 3, ... ], s = 1
+            if (a[i-1] <= s && s < a[i]) { return 0; } // s is between two elements, always return the rightmost
+            if (s > a[i])           { return 1;  }
+            if (s <= a[i-1])        { return -1; }
+            $.error('cannot compare s: ' + s + ' with a[' + i + ']. a is: ' + a.join(','));
          },
          /*
           * Perform binary search to find searchElement into a generic array.
@@ -305,25 +323,6 @@
                 $rightGrip.addClass(highlightGripClass);
             }
         },
-        /*
-         * Utility function. Given a value within the range of the slider,
-         * converts the value in pixels. If a value_to_pixel_mapping function
-         * is defined it will be used, otherwise a linear mapping is used for
-         * the conversion.
-         */
-        'valueToPx' : function (value) {
-            var $this = this,
-                value_to_pixel_mapping_func = $this.data('value_to_pixel_mapping');
-
-            // try using non-linear mapping if it's there...
-            if (typeof value_to_pixel_mapping_func !== 'undefined') {
-                return value_to_pixel_mapping_func(value); 
-            }
-
-            // ... use linear mapping otherwise
-            var w = _methods.getSliderWidthPx.call($this) - $this.data('left_grip_width');
-            return _methods.rangemap_0_to_n.call($this, value, w);
-        },
         /* 
          *  Set left and right handle at the right position on the screen (pixels) 
          *  given the desired position in currency.
@@ -358,8 +357,8 @@
                 cur_max = $this.data('cur_max');
             }
 
-            var leftPx = _methods.valueToPx.call($this, cur_min),
-                rightPx = _methods.valueToPx.call($this, cur_max);
+            var leftPx = methods.value_to_px.call($this, cur_min),
+                rightPx = methods.value_to_px.call($this, cur_max);
 
             _methods.set_handles_at_px.call($this, leftPx, rightPx);
 
@@ -532,7 +531,7 @@
             // point where the click happened, meaning the slider grip will be
             // spanning to the right.
             //
-            curX = e.pageX - ($this.data('left_grip_width') / 2);
+            curX = Math.round(e.pageX) - ($this.data('left_grip_width') / 2);
 
             // calculate deltas from left and right grip
             ldist = Math.abs(lleft - curX);
@@ -637,7 +636,11 @@
 
             _methods.notify_changed_implicit.call($this, 'drag_start', prev_min, prev_max);
 
-            e.preventDefault();
+            // no need to call preventDefault on touch events, as we called
+            // preventDefault on the original event already
+            if (Object.prototype.toString.apply(e) !== "[object Touch]") {
+                e.preventDefault();
+            }
         },
         'drag_move_func_touch' : function (e) {
             if (_is_mousedown === true) {
@@ -651,6 +654,7 @@
             if (_is_mousedown) {
                 // our slider element.
                 var $this = _$current_slider,
+                    settings = $this.data('settings'),
                     sliderWidthPx = _methods.getSliderWidthPx.call($this) - $this.data('left_grip_width'),
                     leftGripPositionPx = _methods.getLeftGripPositionPx.call($this);
 
@@ -662,7 +666,7 @@
                 // position of the mouse cursors via e.pageX, which returns the
                 // absolute position of the mouse on the screen.
                 //
-                var absoluteMousePosition = e.pageX;
+                var absoluteMousePosition = Math.round(e.pageX);
 
                 //
                 // Compute the delta (in px) for the slider movement. It is the
@@ -683,8 +687,20 @@
 
                 // 1) calculate the area within which the movement is
                 //    considered to be valid.
-                var drag_area_start = $this.offset().left + $this.data('left_grip_width'),
+                var half_a_grip_width = $this.data('left_grip_width') / 2,
+                    drag_area_start = $this.offset().left + $this.data('left_grip_width') - half_a_grip_width,
                     drag_area_end = drag_area_start + sliderWidthPx;
+
+                if (settings.crossable_handles === false && $this.data('has_right_grip')) {
+                    // if handles are not crossable, we should define the left
+                    // and the right boundary of the movement.
+                    if (_is_left_grip) {
+                        drag_area_end = drag_area_start + rightGripPositionPx;
+                    }
+                    else {
+                        drag_area_start = drag_area_start + leftGripPositionPx;
+                    }
+                }
  
                 // 2) by default we accept to move the slider according to both
                 // the deltas (i.e., left or right)
@@ -705,7 +721,9 @@
                 //
                 // Here we decide whether to invert the grip being moved.
                 //
-                if ($this.data('has_right_grip')) {
+                if (settings.crossable_handles === true && 
+                    $this.data('has_right_grip')) {
+
                     if (_is_left_grip) {
 
                         // ... if we are using the left grip
@@ -775,7 +793,12 @@
                 // prepare for next movement
                 _original_mousex = absoluteMousePosition;
 
-                e.preventDefault();
+                
+                // no need to call preventDefault on touch events, as we called
+                // preventDefault on the original event already
+                if (Object.prototype.toString.apply(e) !== "[object Touch]") {
+                    e.preventDefault();
+                }
             }
         },
         'drag_end_func_touch' : function (e) {
@@ -1028,6 +1051,7 @@
 
     };
     var methods = {
+        
         'teardown' : function () {
             var $this = this;
 
@@ -1088,6 +1112,10 @@
 
                 // if the bar is not wanted
                 'value_bar_selector': undefined,
+
+                // Allow handles to cross each other while one of them is being
+                // dragged. This option is ignored if just one handle is used.
+                'crossable_handles': true,
 
                 'value_changed_callback': function(/*cause, vmin, vmax*/) { return; },
                 'user_mouseup_callback' : function(/*vmin, vmax, left_grip_moved*/) { return; },
@@ -1682,30 +1710,28 @@
             };
 
             var value_to_pixel_mapping = function (value) {
-                // binary search into the array of pixels...
-                var pixel = _methods.binarySearch.call($this, pixel_to_value_lookup, value, 
+                //
+                // Binary search into the array of pixels, returns always the
+                // rightmost pixel if there is no exact match.
+                //
+                var suggestedPixel = _methods.binarySearch.call($this, pixel_to_value_lookup, value, 
                     function(a, i) { return a[i]; },  // access a value in the array
-
-                    // Must return:
-                    //
-                    // s: element to search for
-                    // a: array we are looking in 
-                    // i: position of the element we are looking for
-                    //
-                    // -1 (s < a[i])
-                    // 0  found (= a[i])
-                    // 1  (s > a[i])
-                    function (s, a, i) {
-                        if (s === a[i])          { return 0; }
-                        if (s < a[i] && i === 0) { return 0; }
-                        if (a[i-1] <= s && s < a[i]) { return 0; }
-                        if (s > a[i])           { return 1;  }
-                        if (s <= a[i-1])        { return -1; }
-                        $.error('cannot compare s: ' + s + ' with a[' + i + ']. a is: ' + a.join(','));
-                    }
+                    _methods.binarySearchValueToPxCompareFunc
                 );
 
-                return pixel;
+                // exact match
+                if (pixel_to_value_lookup[suggestedPixel] === value) {
+                    return suggestedPixel;
+                }
+
+                // approx match: we need to check if it's closer to the value
+                // at suggestedPixel or the value at suggestedPixel-1
+                if ( Math.abs(pixel_to_value_lookup[suggestedPixel-1] - value) <
+                     Math.abs(pixel_to_value_lookup[suggestedPixel] - value) ) {
+
+                     return suggestedPixel-1;
+                }
+                return suggestedPixel;
             };
 
             //
@@ -1782,8 +1808,8 @@
             if (!rangeMax) { rangeMax = 0; }
 
             // we need to map rangeMin and rangeMax into pixels.
-            var leftPx = _methods.valueToPx.call($this, rangeMin),
-                rightPx = _methods.valueToPx.call($this, rangeMax),
+            var leftPx = methods.value_to_px.call($this, rangeMin),
+                rightPx = methods.value_to_px.call($this, rangeMax),
                 barWidth = rightPx - leftPx + $this.data('left_grip_width');
 
             // set position
@@ -1889,6 +1915,25 @@
                 $.error('rounding must be > 0, got ' + rounding + ' instead');
             }
             return v;
+        },
+        /*
+         * Utility function. Given a value within the range of the slider,
+         * converts the value in pixels. If a value_to_pixel_mapping function
+         * is defined it will be used, otherwise a linear mapping is used for
+         * the conversion.
+         */
+        'value_to_px' : function (value) {
+            var $this = this,
+                value_to_pixel_mapping_func = $this.data('value_to_pixel_mapping');
+
+            // try using non-linear mapping if it's there...
+            if (typeof value_to_pixel_mapping_func !== 'undefined') {
+                return value_to_pixel_mapping_func(value); 
+            }
+
+            // ... use linear mapping otherwise
+            var w = _methods.getSliderWidthPx.call($this) - $this.data('left_grip_width');
+            return _methods.rangemap_0_to_n.call($this, value, w);
         }
     };
 
